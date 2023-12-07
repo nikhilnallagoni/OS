@@ -1,4 +1,4 @@
-//bestfit;
+//best fit
 #include<bits/stdc++.h>
 using namespace std;
 #define tab "\t"
@@ -8,12 +8,12 @@ int main()
     cin>>m>>n;
     vector<int>block(m),process(n);
     vector<bool>used(m,false);
-    vector<int>ans(n,0);
+    vector<int>ans(n,-1);
     for(auto &i:block)cin>>i;
     for(auto &it:process)cin>>it;
-    int allocated=0;
+   
     int ind=0;
-    while(allocated!=n)
+    while(ind!=n)
     {
       int best=INT_MAX;
       int pos=-1;
@@ -29,14 +29,13 @@ int main()
          }
 
       }
-      
+
       if(pos!=-1)
       {
          used[pos]=true;
-         allocated++;
          ans[ind]=pos+1;
-         ind++;
       }
+         ind++;
 
     }
     cout<<"P.No"<<tab<<"p.size"<<tab<<"b.no"<<endl;
